@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap');
+
+:root {
+  --bg: #f5f6fa;
+  --card: #fff;
+  --text: #222;
+  --accent: #4caf50;
+  --shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+[data-theme="dark"] {
+  --bg: #121212;
+  --card: #1e1e1e;
+  --text: #eee;
+  --accent: #00c6ff;
+  --shadow: 0 6px 16px rgba(0,0,0,0.5);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  transition: background 0.3s, color 0.3s;
+}
+
+.app {
+  background: var(--card);
+  border-radius: 20px;
+  padding: 2rem;
+  width: 350px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+h1 {
+  font-size: 1.6rem;
+}
+
+/* Timer */
+.timer-container {
+  position: relative;
+  width: 200px;
+  margin: 0 auto;
+}
+.progress-ring {
+  transform: rotate(-90deg);
+}
+.ring-bg {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 10;
+}
+.ring-progress {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 10;
+  stroke-dasharray: 565;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 0.3s linear;
+}
+.timer-display {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#time {
+  font-size: 2.4rem;
+  margin: 0;
+}
+#modeLabel {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+/* Controls */
+.controls {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 0.7rem 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+button:hover {
+  transform: translateY(-2px);
+}
+
+/* Theme toggle */
+.theme-toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.theme-toggle {
+  position: relative;
+  width: 40px;
+  height: 20px;
+}
+.theme-toggle input { display: none; }
+.slider {
+  position: absolute; inset: 0;
+  background: #ccc; border-radius: 20px; transition: 0.3s;
+}
+.slider:before {
+  content: "";
+  position: absolute; left: 2px; top: 2px;
+  width: 16px; height: 16px;
+  background: white; border-radius: 50%; transition: 0.3s;
+}
+input:checked + .slider {
+  background: var(--accent);
+}
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
