@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #eef1f5;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.wrapper {
+    background: white;
+    width: 450px;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+header {
+    font-size: 26px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    background: #f1f3f7;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.search input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-size: 16px;
+}
+
+.search i, .search span {
+    cursor: pointer;
+    font-size: 20px;
+    color: #555;
+}
+
+.info-text {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #777;
+}
+
+ul {
+    margin-top: 20px;
+    list-style: none;
+}
+
+.word, .meaning, .example, .synonyms {
+    margin-bottom: 20px;
+}
+
+.details p {
+    font-size: 18px;
+    font-weight: 600;
+    color: #222;
+}
+
+.details span {
+    color: #444;
+    font-size: 15px;
+}
+
+.synonyms .list span {
+    background: #e8edff;
+    padding: 5px 10px;
+    margin-right: 5px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.fa-volume-up {
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+}
