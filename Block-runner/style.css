@@ -1,0 +1,57 @@
+:root {
+  --background-gradient: linear-gradient(135deg, #ff6ec4, #7873f5, #42e695);
+  --container-bg-color: rgba(255, 255, 255, 0.1);
+  --container-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  --canvas-bg-color: #1e1e2f;
+  --canvas-border-color: #ffffffaa;
+  --glow-color: #ff6ec4;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--background-gradient);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#container {
+  background: var(--container-bg-color);
+  padding: 2.5rem 4rem;
+  border-radius: 20px;
+  box-shadow: var(--container-shadow);
+  text-align: center;
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+canvas {
+  background: var(--canvas-bg-color);
+  border: 3px solid var(--canvas-border-color);
+  border-radius: 15px;
+  box-shadow: 0 0 20px var(--glow-color), 0 4px 15px rgba(0, 0, 0, 0.3);
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+canvas:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 35px var(--glow-color), 0 6px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Animated gradient background */
+@keyframes gradientMove {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
