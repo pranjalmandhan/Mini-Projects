@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1e1e1e, #2c2c2c);
+    color: #fff;
+    flex-direction: column;
+    font-family: 'Electrolize', sans-serif;
+}
+
+h1{
+    font-family: 'Press Start 2P', cursive;
+    font-size: 50px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #00f6ff;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(5, 80px);
+    grid-template-rows: repeat(5, 80px);
+    gap: 10px;
+    padding: 20px;
+    border-radius: 15px;
+    background: linear-gradient(145deg, #3b3b3b, #464646);
+    box-shadow: 5px 5px 15px #1a1a1a,
+                -5px -5px 15px #686868;
+}
+
+.tile {
+    width: 80px;
+    height: 80px;
+    border-radius: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.tile:hover {
+    transform: scale(1.1) rotate(3deg);
+}
+
+.tile1 { background-color: #ff6f61; }
+.tile2 { background-color: #8e44ad; }
+.tile3 { background-color: #27ae60; }
+.tile4 { background-color: #f78fb3; }
+.tile5 { background-color: #2980b9; }
+
+.tile.highlight {
+    box-shadow: 0 0 15px #fff;
+    transform: scale(1.2);
+}
+
+.empty {
+    background-color: transparent;
+    pointer-events: none;
+    transition: background-color 0.5s ease;
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background: #333;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: #444;
+    transform: translateY(-3px);
+}
+
+button:active {
+    transform: translateY(2px);
+}
+
+/* Labels */
+#level, #score, #moves-left {
+    font-size: 20px;
+    font-weight: bold;
+}
