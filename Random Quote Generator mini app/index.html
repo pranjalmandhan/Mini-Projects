@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Random Quote Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Motivational Quotes</h1>
+
+        <!-- Quote Box -->
+        <div id="quote-box">
+            <p id="quote">Click "New Quote" to get inspired!</p>
+            <p id="author"></p>
+        </div>
+
+        <!-- Buttons -->
+        <div class="buttons">
+            <button id="new-quote">New Quote</button>
+            <button onclick="speakQuote()">Speak</button>
+            <button onclick="shareQuote()"> Share</button>
+            <button onclick="saveQuote()"> Save</button>
+            <button id="clear-favorites"> Clear All</button>
+
+        </div>
+
+        <!-- Search -->
+        <div class="search-box">
+            <input type="text" id="search" placeholder="Search quotes">
+            <button onclick="searchQuote()">Search</button>
+        </div>
+
+        <!-- Category Selector -->
+        <div class="category-box">
+            <label for="category">Category:</label>
+            <select id="category" onchange="generateQuoteByCategory(this.value)">
+                <option value="all">All</option>
+                <option value="Motivation">Motivation</option>
+                <option value="Life">Life</option>
+                <option value="Success">Success</option>
+            </select>
+        </div>
+
+        <!-- Favorites -->
+            <div class="favorites-box">
+    <h3>Saved Quotes:</h3>
+    <ul id="favorites-list"></ul>
+</div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
