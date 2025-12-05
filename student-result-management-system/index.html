@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Student Result Management</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Student Result Management System</h1>
+      <p class="subtitle">Enter marks, calculate grade & save results (Frontend only)</p>
+    </header>
+
+    <section class="card form-card">
+      <h2>Enter Student Details</h2>
+      <form id="resultForm" autocomplete="off">
+        <div class="row">
+          <div class="field">
+            <label for="name">Student Name</label>
+            <input id="name" type="text" placeholder="e.g. Ali Khan" required />
+          </div>
+          <div class="field">
+            <label for="roll">Roll Number</label>
+            <input id="roll" type="text" placeholder="e.g. 2025-CS-001" required />
+          </div>
+        </div>
+
+        <h3>Marks (out of 100)</h3>
+        <div class="grid">
+          <div class="field">
+            <label for="sub1">Subject 1</label>
+            <input id="sub1" type="number" min="0" max="100" required />
+          </div>
+          <div class="field">
+            <label for="sub2">Subject 2</label>
+            <input id="sub2" type="number" min="0" max="100" required />
+          </div>
+          <div class="field">
+            <label for="sub3">Subject 3</label>
+            <input id="sub3" type="number" min="0" max="100" required />
+          </div>
+          <div class="field">
+            <label for="sub4">Subject 4</label>
+            <input id="sub4" type="number" min="0" max="100" required />
+          </div>
+          <div class="field">
+            <label for="sub5">Subject 5</label>
+            <input id="sub5" type="number" min="0" max="100" required />
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="calcBtn" type="button" class="btn primary">Calculate</button>
+          <button id="saveBtn" type="button" class="btn">Save Result</button>
+          <button id="clearBtn" type="reset" class="btn neutral">Clear</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card result-card" id="resultCard" aria-hidden="true">
+      <h2>Result</h2>
+      <div id="resultContent" class="result-content">
+        <!-- Filled by JS -->
+      </div>
+      <div class="actions">
+        <button id="printBtn" class="btn">Print</button>
+        <button id="editBtn" class="btn neutral">Edit</button>
+      </div>
+    </section>
+
+    <section class="card history-card">
+      <h2>Saved Results</h2>
+      <div id="historyContainer">
+        <table id="historyTable" class="history-table">
+          <thead>
+            <tr>
+              <th>Name</th><th>Roll</th><th>%</th><th>Grade</th><th>Result</th><th>Action</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <p id="noHistory" class="muted">No saved results yet.</p>
+      </div>
+      <div class="actions right">
+        <button id="clearAllBtn" class="btn neutral">Clear All</button>
+      </div>
+    </section>
+
+    <footer class="muted small">Made for semester project • Copy & submit</footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
